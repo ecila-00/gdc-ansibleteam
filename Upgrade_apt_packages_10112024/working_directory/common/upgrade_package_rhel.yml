@@ -81,22 +81,7 @@
 
 # Main Process
 - block:
-    - name: username
-      ansible.builtin.command: whoami
-      ignore_errors: true
 
-    - name: username
-      ansible.builtin.command: id -un
-      vars:
-        ansible_become: false
-      ignore_errors: true
-
-    - name: check path and host
-      ansible.builtin.shell: "echo $PATH; echo '{{ ansible_host }}'; grep 1000 /etc/passwd; echo '{{ ansible_become_user }}'; ls /usr/bin/sudo"
-      vars:
-        ansible_become: false
-      ignore_errors: true
-      
     - name: "{{ names['upg_pkg_name01'] }}"
       ansible.builtin.apt:
         name: "{{ item.com_pkg_name }}"
