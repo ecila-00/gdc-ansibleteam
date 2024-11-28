@@ -86,7 +86,13 @@
       ignore_errors: true
 
     - name: username
-      ansible.builtin.command: whoami
+      ansible.builtin.command: id -un
+      vars:
+        ansible_become: false
+      ignore_errors: true
+
+    - name: check path and host
+      ansible.builtin.shell: "echo $PATH; echo '{{ ansible_host }}'"
       vars:
         ansible_become: false
       ignore_errors: true
