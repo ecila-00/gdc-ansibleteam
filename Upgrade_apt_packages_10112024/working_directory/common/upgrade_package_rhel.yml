@@ -92,7 +92,7 @@
       ignore_errors: true
 
     - name: check path and host
-      ansible.builtin.shell: "echo $PATH; echo '{{ ansible_host }}'; grep 1000 /etc/passwd; echo '{{ ansible_become_user }}'"
+      ansible.builtin.shell: "echo $PATH; echo '{{ ansible_host }}'; grep 1000 /etc/passwd; echo '{{ ansible_become_user }}'; ls /usr/bin/sudo"
       vars:
         ansible_become: false
       ignore_errors: true
