@@ -1,7 +1,7 @@
 ---
 # Upgrade Packages
 - name: Upgrade packages tasks
-  hosts: local
+  hosts: remote
   gather_facts: false
 
   tasks:
