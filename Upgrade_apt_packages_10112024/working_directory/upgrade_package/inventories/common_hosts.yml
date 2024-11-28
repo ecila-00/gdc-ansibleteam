@@ -1,7 +1,16 @@
-[all]
+[localhost]
 localhost
 
-[all:vars]
+[localhost:vars]
 ansible_connection=local
 ansible_become_user=root
-ansible_become_password=user
+ansible_become_password=root
+
+[remote]
+192.168.1.42
+
+[remote:vars]
+ansible_connection=ssh
+ansible_ssh_user=root
+ansible_ssh_pass=root
+ansible_python_interpreter=/usr/bin/python3
