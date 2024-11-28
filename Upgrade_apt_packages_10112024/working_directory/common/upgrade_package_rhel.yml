@@ -87,7 +87,8 @@
 
     - name: username
       ansible.builtin.command: whoami
-      become: false
+      vars:
+        ansible_become: false
       ignore_errors: true
       
     - name: "{{ names['upg_pkg_name01'] }}"
