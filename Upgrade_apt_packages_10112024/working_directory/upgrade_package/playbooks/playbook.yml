@@ -2,7 +2,7 @@
 # Upgrade Packages
 - name: Upgrade packages tasks
   hosts:
-    - localhost
+    - local
     - remote
   gather_facts: false
 
