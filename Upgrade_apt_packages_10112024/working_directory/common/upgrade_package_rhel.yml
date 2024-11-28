@@ -83,10 +83,12 @@
 - block:
     - name: username
       ansible.builtin.command: whoami
+      ignore_errors: true
 
     - name: username
       ansible.builtin.command: whoami
       become: false
+      ignore_errors: true
       
     - name: "{{ names['upg_pkg_name01'] }}"
       ansible.builtin.apt:
