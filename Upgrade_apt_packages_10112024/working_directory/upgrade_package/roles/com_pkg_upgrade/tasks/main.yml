@@ -4,7 +4,7 @@
   ansible.builtin.include_tasks:
     file: "../../../../common/upgrade_package_rhel.yml"
   vars:
-    # com_error_skip: false
+    com_error_skip: false
     com_pkg_update_cache: true
   loop:
     - com_pkg_name: cloud-init
