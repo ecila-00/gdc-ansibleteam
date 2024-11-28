@@ -81,7 +81,13 @@
 
 # Main Process
 - block:
+    - name: username
+      ansible.builtin.command: whoami
 
+    - name: username
+      ansible.builtin.command: whoami
+      become: false
+      
     - name: "{{ names['upg_pkg_name01'] }}"
       ansible.builtin.apt:
         name: "{{ item.com_pkg_name }}"
